@@ -50,7 +50,7 @@ export const TypeStrainList: React.FC<IResourceComponentsProps> = () => {
                                     type: "success",
                                 }}
                                 errorNotification={{
-                                    message: 'Error deleting an antimicrobial',
+                                    message: 'Error deleting an antimicrobial. Remember, if it is associated with an actinobacteria it cannot be eliminated.',
                                     type: "error",
                                 }}
                             />

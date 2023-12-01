@@ -50,7 +50,7 @@ export const EnzymeList: React.FC<IResourceComponentsProps> = () => {
                                     type: "success",
                                 }}
                                 errorNotification={{
-                                    message: 'Error deleting an enzyme',
+                                    message: 'Error deleting an enzyme. Remember, if it is associated with an actinobacteria it cannot be eliminated.',
                                     type: "error",
                                 }}
                             />

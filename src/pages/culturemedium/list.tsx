@@ -50,7 +50,7 @@ export const CultureMediumList: React.FC<IResourceComponentsProps> = () => {
                                     type: "success",
                                 }}
                                 errorNotification={{
-                                    message: 'Error deleting a culture media',
+                                    message: 'Error deleting a culture media. Remember, if it is associated with an actinobacteria it cannot be eliminated.',
                                     type: "error",
                                 }}
                             />
