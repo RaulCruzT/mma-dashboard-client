@@ -3,7 +3,7 @@ import { useForm } from "@refinedev/react-hook-form";
 import { IUser } from "../../interfaces/user";
 import { HttpError } from "@refinedev/core";
 import { Edit } from "@refinedev/mui";
-import { Autocomplete, FormControl, FormHelperText, FormLabel, Grid, Stack, TextField, Typography } from "@mui/material";
+import { Autocomplete, FormControl, FormLabel, Grid, Stack, TextField, Typography } from "@mui/material";
 import { Controller } from "react-hook-form";
 
 
@@ -57,17 +57,26 @@ export const UsersEdit: React.FC<IResourceComponentsProps> = () => {
                                     Name
                                 </FormLabel>
                                 <TextField
-                                    {...register("name")}
+                                    {...register("name", {
+                                        required: {
+                                            value: true,
+                                            message: "required"
+                                        },
+                                        maxLength: {
+                                            value: 100,
+                                            message: "You cannot enter more than 100 characters"
+                                        }
+                                    })}
                                     size="small"
                                     margin="none"
                                     variant="outlined"
                                     disabled
+                                    error={
+                                        !!errors.name
+                                            ?.message
+                                    }
+                                    helperText={errors.name?.message}
                                 />
-                                {errors.name && (
-                                    <FormHelperText error>
-                                        {errors.name.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                             <FormControl>
                                 <FormLabel
@@ -82,17 +91,26 @@ export const UsersEdit: React.FC<IResourceComponentsProps> = () => {
                                     Email
                                 </FormLabel>
                                 <TextField
-                                    {...register("email")}
+                                    {...register("email", {
+                                        required: {
+                                            value: true,
+                                            message: "required"
+                                        },
+                                        maxLength: {
+                                            value: 100,
+                                            message: "You cannot enter more than 100 characters"
+                                        }
+                                    })}
                                     size="small"
                                     margin="none"
                                     variant="outlined"
                                     disabled
+                                    error={
+                                        !!errors.email
+                                            ?.message
+                                    }
+                                    helperText={errors.email?.message}
                                 />
-                                {errors.email && (
-                                    <FormHelperText error>
-                                        {errors.email.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                             <FormControl fullWidth>
                                 <FormLabel
@@ -139,18 +157,15 @@ export const UsersEdit: React.FC<IResourceComponentsProps> = () => {
                                                     variant="outlined"
                                                     error={
                                                         !!errors.role
+                                                            ?.message
                                                     }
+                                                    helperText={errors.role?.message}
                                                     required
                                                 />
                                             )}
                                         />
                                     )}
                                 />
-                                {errors.role && (
-                                    <FormHelperText error>
-                                        {errors.role.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
