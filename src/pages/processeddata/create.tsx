@@ -3,7 +3,7 @@ import { useForm } from "@refinedev/react-hook-form";
 import { IProcessedData } from "../../interfaces/processeddata";
 import { HttpError } from "@refinedev/core";
 import { Create, useAutocomplete } from "@refinedev/mui";
-import { Autocomplete, FormControl, FormHelperText, FormLabel, Grid, Stack, TextField, Typography } from "@mui/material";
+import { Autocomplete, FormControl, FormLabel, Grid, Stack, TextField, Typography } from "@mui/material";
 import { IMyActinobacteria } from "../../interfaces/myactinobacteria";
 import { Nullable } from "../../interfaces/utils";
 import { Controller } from "react-hook-form";
@@ -111,17 +111,13 @@ export const ProcessedDataCreate: React.FC<IResourceComponentsProps> = () => {
                                                         !!errors.actinobacteria
                                                             ?.message
                                                     }
+                                                    helperText={errors.actinobacteria?.message}
                                                     required
                                                 />
                                             )}
                                         />
                                     )}
                                 />
-                                {errors.actinobacteria && (
-                                    <FormHelperText error>
-                                        {errors.actinobacteria.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
@@ -153,12 +149,12 @@ export const ProcessedDataCreate: React.FC<IResourceComponentsProps> = () => {
                                     size="small"
                                     margin="none"
                                     variant="outlined"
+                                    error={
+                                        !!errors.dataSource
+                                            ?.message
+                                    }
+                                    helperText={errors.dataSource?.message}
                                 />
-                                {errors.dataSource && (
-                                    <FormHelperText error>
-                                        {errors.dataSource.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
@@ -190,12 +186,12 @@ export const ProcessedDataCreate: React.FC<IResourceComponentsProps> = () => {
                                     size="small"
                                     margin="none"
                                     variant="outlined"
+                                    error={
+                                        !!errors.equipment
+                                            ?.message
+                                    }
+                                    helperText={errors.equipment?.message}
                                 />
-                                {errors.equipment && (
-                                    <FormHelperText error>
-                                        {errors.equipment.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
@@ -227,12 +223,12 @@ export const ProcessedDataCreate: React.FC<IResourceComponentsProps> = () => {
                                     size="small"
                                     margin="none"
                                     variant="outlined"
+                                    error={
+                                        !!errors.fileName
+                                            ?.message
+                                    }
+                                    helperText={errors.fileName?.message}
                                 />
-                                {errors.fileName && (
-                                    <FormHelperText error>
-                                        {errors.fileName.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
@@ -260,12 +256,12 @@ export const ProcessedDataCreate: React.FC<IResourceComponentsProps> = () => {
                                     size="small"
                                     margin="none"
                                     variant="outlined"
+                                    error={
+                                        !!errors.massDetection
+                                            ?.message
+                                    }
+                                    helperText={errors.massDetection?.message}
                                 />
-                                {errors.massDetection && (
-                                    <FormHelperText error>
-                                        {errors.massDetection.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
@@ -293,12 +289,12 @@ export const ProcessedDataCreate: React.FC<IResourceComponentsProps> = () => {
                                     size="small"
                                     margin="none"
                                     variant="outlined"
+                                    error={
+                                        !!errors.chromatogramBuilder
+                                            ?.message
+                                    }
+                                    helperText={errors.chromatogramBuilder?.message}
                                 />
-                                {errors.chromatogramBuilder && (
-                                    <FormHelperText error>
-                                        {errors.chromatogramBuilder.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
@@ -326,12 +322,12 @@ export const ProcessedDataCreate: React.FC<IResourceComponentsProps> = () => {
                                     size="small"
                                     margin="none"
                                     variant="outlined"
+                                    error={
+                                        !!errors.deconvolution
+                                            ?.message
+                                    }
+                                    helperText={errors.deconvolution?.message}
                                 />
-                                {errors.deconvolution && (
-                                    <FormHelperText error>
-                                        {errors.deconvolution.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
@@ -359,12 +355,12 @@ export const ProcessedDataCreate: React.FC<IResourceComponentsProps> = () => {
                                     size="small"
                                     margin="none"
                                     variant="outlined"
+                                    error={
+                                        !!errors.isotope
+                                            ?.message
+                                    }
+                                    helperText={errors.isotope?.message}
                                 />
-                                {errors.isotope && (
-                                    <FormHelperText error>
-                                        {errors.isotope.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
@@ -392,12 +388,12 @@ export const ProcessedDataCreate: React.FC<IResourceComponentsProps> = () => {
                                     size="small"
                                     margin="none"
                                     variant="outlined"
+                                    error={
+                                        !!errors.filtered
+                                            ?.message
+                                    }
+                                    helperText={errors.filtered?.message}
                                 />
-                                {errors.filtered && (
-                                    <FormHelperText error>
-                                        {errors.filtered.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
@@ -425,12 +421,12 @@ export const ProcessedDataCreate: React.FC<IResourceComponentsProps> = () => {
                                     size="small"
                                     margin="none"
                                     variant="outlined"
+                                    error={
+                                        !!errors.identification
+                                            ?.message
+                                    }
+                                    helperText={errors.identification?.message}
                                 />
-                                {errors.identification && (
-                                    <FormHelperText error>
-                                        {errors.identification.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
@@ -458,12 +454,12 @@ export const ProcessedDataCreate: React.FC<IResourceComponentsProps> = () => {
                                     size="small"
                                     margin="none"
                                     variant="outlined"
+                                    error={
+                                        !!errors.alignment
+                                            ?.message
+                                    }
+                                    helperText={errors.alignment?.message}
                                 />
-                                {errors.alignment && (
-                                    <FormHelperText error>
-                                        {errors.alignment.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
@@ -491,12 +487,12 @@ export const ProcessedDataCreate: React.FC<IResourceComponentsProps> = () => {
                                     size="small"
                                     margin="none"
                                     variant="outlined"
+                                    error={
+                                        !!errors.gapFilling
+                                            ?.message
+                                    }
+                                    helperText={errors.gapFilling?.message}
                                 />
-                                {errors.gapFilling && (
-                                    <FormHelperText error>
-                                        {errors.gapFilling.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
@@ -524,12 +520,12 @@ export const ProcessedDataCreate: React.FC<IResourceComponentsProps> = () => {
                                     size="small"
                                     margin="none"
                                     variant="outlined"
+                                    error={
+                                        !!errors.massIVEID
+                                            ?.message
+                                    }
+                                    helperText={errors.massIVEID?.message}
                                 />
-                                {errors.massIVEID && (
-                                    <FormHelperText error>
-                                        {errors.massIVEID.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
@@ -557,12 +553,12 @@ export const ProcessedDataCreate: React.FC<IResourceComponentsProps> = () => {
                                     size="small"
                                     margin="none"
                                     variant="outlined"
+                                    error={
+                                        !!errors.link
+                                            ?.message
+                                    }
+                                    helperText={errors.link?.message}
                                 />
-                                {errors.link && (
-                                    <FormHelperText error>
-                                        {errors.link.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
@@ -592,12 +588,12 @@ export const ProcessedDataCreate: React.FC<IResourceComponentsProps> = () => {
                                     variant="outlined"
                                     multiline
                                     minRows={5}
+                                    error={
+                                        !!errors.comments
+                                            ?.message
+                                    }
+                                    helperText={errors.comments?.message}
                                 />
-                                {errors.comments && (
-                                    <FormHelperText error>
-                                        {errors.comments.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>

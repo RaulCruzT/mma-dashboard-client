@@ -55,7 +55,10 @@ export const TypeStrainEdit: React.FC<IResourceComponentsProps> = () => {
                                 </FormLabel>
                                 <TextField
                                     {...register("name", {
-                                        required: true,
+                                        required: {
+                                            value: true,
+                                            message: "required"
+                                        },
                                         maxLength: {
                                             value: 100,
                                             message: "You cannot enter more than 100 characters"
@@ -64,7 +67,10 @@ export const TypeStrainEdit: React.FC<IResourceComponentsProps> = () => {
                                     size="small"
                                     margin="none"
                                     variant="outlined"
-                                    error={errors.name ? true : false}
+                                    error={
+                                        !!errors.name
+                                            ?.message
+                                    }
                                     helperText={errors.name?.message}
                                 />
                             </FormControl>

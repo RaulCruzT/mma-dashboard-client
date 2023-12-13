@@ -67,7 +67,10 @@ export const EnzymeEdit: React.FC<IResourceComponentsProps> = () => {
                                     size="small"
                                     margin="none"
                                     variant="outlined"
-                                    error={errors.name ? true : false}
+                                    error={
+                                        !!errors.name
+                                            ?.message
+                                    }
                                     helperText={errors.name?.message}
                                 />
                             </FormControl>
