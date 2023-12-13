@@ -3,7 +3,7 @@ import { useForm } from '@refinedev/react-hook-form';
 import { IAssembly } from "../../interfaces/assembly";
 import { HttpError } from "@refinedev/core";
 import { Create, useAutocomplete } from "@refinedev/mui";
-import { Autocomplete, FormControl, FormHelperText, FormLabel, Grid, Stack, TextField, Typography } from "@mui/material";
+import { Autocomplete, FormControl, FormLabel, Grid, Stack, TextField, Typography } from "@mui/material";
 import { IMyActinobacteria } from "../../interfaces/myactinobacteria";
 import { Nullable } from "../../interfaces/utils";
 import { Controller } from "react-hook-form";
@@ -115,17 +115,13 @@ export const AssemblyCreate: React.FC<IResourceComponentsProps> = () => {
                                                         !!errors.actinobacteria
                                                             ?.message
                                                     }
+                                                    helperText={errors.actinobacteria?.message}
                                                     required
                                                 />
                                             )}
                                         />
                                     )}
                                 />
-                                {errors.actinobacteria && (
-                                    <FormHelperText error>
-                                        {errors.actinobacteria.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
@@ -157,12 +153,12 @@ export const AssemblyCreate: React.FC<IResourceComponentsProps> = () => {
                                     size="small"
                                     margin="none"
                                     variant="outlined"
+                                    error={
+                                        !!errors.sequencingTechnology
+                                            ?.message
+                                    }
+                                    helperText={errors.sequencingTechnology?.message}
                                 />
-                                {errors.sequencingTechnology && (
-                                    <FormHelperText error>
-                                        {errors.sequencingTechnology.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
@@ -192,17 +188,20 @@ export const AssemblyCreate: React.FC<IResourceComponentsProps> = () => {
                                                 onAccept={onChange}
                                                 value={dayjs.utc(value)}
                                                 inputRef={ref}
-                                                slotProps={{ textField: { size: 'small' } }}
+                                                slotProps={{
+                                                    textField: {
+                                                        required: true,
+                                                        size: 'small',
+                                                        variant: 'outlined',
+                                                        error: !!errors.date?.date,
+                                                        helperText: errors.date?.message
+                                                    },
+                                                }}
                                                 format="DD/MM/YYYY"
                                             />
                                         </LocalizationProvider>
                                     )}
                                 />
-                                {errors.date && (
-                                    <FormHelperText error>
-                                        {errors.date.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
@@ -234,12 +233,12 @@ export const AssemblyCreate: React.FC<IResourceComponentsProps> = () => {
                                     size="small"
                                     margin="none"
                                     variant="outlined"
+                                    error={
+                                        !!errors.softwareTrimming
+                                            ?.message
+                                    }
+                                    helperText={errors.softwareTrimming?.message}
                                 />
-                                {errors.softwareTrimming && (
-                                    <FormHelperText error>
-                                        {errors.softwareTrimming.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
@@ -271,12 +270,12 @@ export const AssemblyCreate: React.FC<IResourceComponentsProps> = () => {
                                     size="small"
                                     margin="none"
                                     variant="outlined"
+                                    error={
+                                        !!errors.softwareAssembly
+                                            ?.message
+                                    }
+                                    helperText={errors.softwareAssembly?.message}
                                 />
-                                {errors.softwareAssembly && (
-                                    <FormHelperText error>
-                                        {errors.softwareAssembly.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
@@ -308,12 +307,12 @@ export const AssemblyCreate: React.FC<IResourceComponentsProps> = () => {
                                     size="small"
                                     margin="none"
                                     variant="outlined"
+                                    error={
+                                        !!errors.parametersAssembly
+                                            ?.message
+                                    }
+                                    helperText={errors.parametersAssembly?.message}
                                 />
-                                {errors.parametersAssembly && (
-                                    <FormHelperText error>
-                                        {errors.parametersAssembly.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
@@ -345,12 +344,12 @@ export const AssemblyCreate: React.FC<IResourceComponentsProps> = () => {
                                     size="small"
                                     margin="none"
                                     variant="outlined"
+                                    error={
+                                        !!errors.qualityFinal
+                                            ?.message
+                                    }
+                                    helperText={errors.qualityFinal?.message}
                                 />
-                                {errors.qualityFinal && (
-                                    <FormHelperText error>
-                                        {errors.qualityFinal.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
@@ -379,12 +378,12 @@ export const AssemblyCreate: React.FC<IResourceComponentsProps> = () => {
                                     margin="none"
                                     variant="outlined"
                                     type="url"
+                                    error={
+                                        !!errors.bgcs
+                                            ?.message
+                                    }
+                                    helperText={errors.bgcs?.message}
                                 />
-                                {errors.bgcs && (
-                                    <FormHelperText error>
-                                        {errors.bgcs.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
@@ -413,12 +412,12 @@ export const AssemblyCreate: React.FC<IResourceComponentsProps> = () => {
                                     margin="none"
                                     variant="outlined"
                                     type="url"
+                                    error={
+                                        !!errors.link
+                                            ?.message
+                                    }
+                                    helperText={errors.link?.message}
                                 />
-                                {errors.link && (
-                                    <FormHelperText error>
-                                        {errors.link.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
@@ -447,12 +446,12 @@ export const AssemblyCreate: React.FC<IResourceComponentsProps> = () => {
                                     margin="none"
                                     variant="outlined"
                                     type="url"
+                                    error={
+                                        !!errors.accessionNumber
+                                            ?.message
+                                    }
+                                    helperText={errors.accessionNumber?.message}
                                 />
-                                {errors.accessionNumber && (
-                                    <FormHelperText error>
-                                        {errors.accessionNumber.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
@@ -481,12 +480,12 @@ export const AssemblyCreate: React.FC<IResourceComponentsProps> = () => {
                                     margin="none"
                                     variant="outlined"
                                     type="url"
+                                    error={
+                                        !!errors.paper
+                                            ?.message
+                                    }
+                                    helperText={errors.paper?.message}
                                 />
-                                {errors.paper && (
-                                    <FormHelperText error>
-                                        {errors.paper.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
@@ -516,12 +515,12 @@ export const AssemblyCreate: React.FC<IResourceComponentsProps> = () => {
                                     variant="outlined"
                                     multiline
                                     minRows={5}
+                                    error={
+                                        !!errors.comments
+                                            ?.message
+                                    }
+                                    helperText={errors.comments?.message}
                                 />
-                                {errors.comments && (
-                                    <FormHelperText error>
-                                        {errors.comments.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
