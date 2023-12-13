@@ -3,7 +3,7 @@ import { useForm } from "@refinedev/react-hook-form";
 import { IGenera } from "../../interfaces/genera";
 import { HttpError } from "@refinedev/core";
 import { Create } from "@refinedev/mui";
-import { FormControl, FormHelperText, FormLabel, Grid, Stack, TextField, Typography } from "@mui/material";
+import { FormControl, FormLabel, Grid, Stack, TextField, Typography } from "@mui/material";
 
 export const GeneraCreate: React.FC<IResourceComponentsProps> = () => {
     const {
@@ -55,7 +55,10 @@ export const GeneraCreate: React.FC<IResourceComponentsProps> = () => {
                                 </FormLabel>
                                 <TextField
                                     {...register("name", {
-                                        required: true,
+                                        required: {
+                                            value: true,
+                                            message: "required"
+                                        },
                                         maxLength: {
                                             value: 100,
                                             message: "You cannot enter more than 100 characters"
@@ -64,12 +67,9 @@ export const GeneraCreate: React.FC<IResourceComponentsProps> = () => {
                                     size="small"
                                     margin="none"
                                     variant="outlined"
+                                    error={errors.name ? true : false}
+                                    helperText={errors.name?.message}
                                 />
-                                {errors.name && (
-                                    <FormHelperText error>
-                                        {errors.name.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>

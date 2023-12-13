@@ -3,7 +3,7 @@ import { useForm } from "@refinedev/react-hook-form";
 import { ITypeStrain } from "../../interfaces/typestrain";
 import { HttpError } from "@refinedev/core";
 import { Edit } from "@refinedev/mui";
-import { FormControl, FormHelperText, FormLabel, Grid, Stack, TextField, Typography } from "@mui/material";
+import { FormControl, FormLabel, Grid, Stack, TextField, Typography } from "@mui/material";
 
 export const TypeStrainEdit: React.FC<IResourceComponentsProps> = () => {
     const {
@@ -64,12 +64,9 @@ export const TypeStrainEdit: React.FC<IResourceComponentsProps> = () => {
                                     size="small"
                                     margin="none"
                                     variant="outlined"
+                                    error={errors.name ? true : false}
+                                    helperText={errors.name?.message}
                                 />
-                                {errors.name && (
-                                    <FormHelperText error>
-                                        {errors.name.message}
-                                    </FormHelperText>
-                                )}
                             </FormControl>
                         </Stack>
                     </Grid>
