@@ -3,7 +3,7 @@ import { useForm } from "@refinedev/react-hook-form";
 import { IActinobacteria } from "../../interfaces/actinobacteria";
 import { HttpError } from "@refinedev/core";
 import { Edit, useAutocomplete } from "@refinedev/mui";
-import { Accordion, AccordionDetails, AccordionSummary, Autocomplete, FormControl, FormHelperText, FormLabel, Grid, Stack, TextField, Typography } from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, Autocomplete, FormControl, FormLabel, Grid, Stack, TextField, Typography } from "@mui/material";
 import {
     ExpandMore
 } from "@mui/icons-material";
@@ -193,13 +193,13 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             size="small"
                                             margin="none"
                                             variant="outlined"
+                                            error={
+                                                !!errors.identifierStrain
+                                                    ?.message
+                                            }
+                                            helperText={errors.identifierStrain?.message}
                                             disabled
                                         />
-                                        {errors.identifierStrain && (
-                                            <FormHelperText error>
-                                                {errors.identifierStrain.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -259,17 +259,13 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                                                 !!errors.identifierGenera
                                                                     ?.message
                                                             }
+                                                            helperText={errors.identifierGenera?.message}
                                                             required
                                                         />
                                                     )}
                                                 />
                                             )}
                                         />
-                                        {errors.identifierGenera && (
-                                            <FormHelperText error>
-                                                {errors.identifierGenera.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -297,12 +293,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             size="small"
                                             margin="none"
                                             variant="outlined"
+                                            error={
+                                                !!errors.identifierSpecies
+                                                    ?.message
+                                            }
+                                            helperText={errors.identifierSpecies?.message}
                                         />
-                                        {errors.identifierSpecies && (
-                                            <FormHelperText error>
-                                                {errors.identifierSpecies.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -335,12 +331,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             margin="none"
                                             variant="outlined"
                                             type="url"
+                                            error={
+                                                !!errors.identifierMainPhoto
+                                                    ?.message
+                                            }
+                                            helperText={errors.identifierMainPhoto?.message}
                                         />
-                                        {errors.identifierMainPhoto && (
-                                            <FormHelperText error>
-                                                {errors.identifierMainPhoto.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -369,12 +365,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             margin="none"
                                             variant="outlined"
                                             type="url"
+                                            error={
+                                                !!errors.identifierPhotos
+                                                    ?.message
+                                            }
+                                            helperText={errors.identifierPhotos?.message}
                                         />
-                                        {errors.identifierPhotos && (
-                                            <FormHelperText error>
-                                                {errors.identifierPhotos.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -406,12 +402,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             size="small"
                                             margin="none"
                                             variant="outlined"
+                                            error={
+                                                !!errors.identifierLocalStorage
+                                                    ?.message
+                                            }
+                                            helperText={errors.identifierLocalStorage?.message}
                                         />
-                                        {errors.identifierLocalStorage && (
-                                            <FormHelperText error>
-                                                {errors.identifierLocalStorage.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -439,12 +435,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             size="small"
                                             margin="none"
                                             variant="outlined"
+                                            error={
+                                                !!errors.identifierInternationalStorage
+                                                    ?.message
+                                            }
+                                            helperText={errors.identifierInternationalStorage?.message}
                                         />
-                                        {errors.identifierInternationalStorage && (
-                                            <FormHelperText error>
-                                                {errors.identifierInternationalStorage.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -474,12 +470,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             variant="outlined"
                                             multiline
                                             minRows={5}
+                                            error={
+                                                !!errors.identifierComments
+                                                    ?.message
+                                            }
+                                            helperText={errors.identifierComments?.message}
                                         />
-                                        {errors.identifierComments && (
-                                            <FormHelperText error>
-                                                {errors.identifierComments.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -527,12 +523,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             size="small"
                                             margin="none"
                                             variant="outlined"
+                                            error={
+                                                !!errors.geographyIsolationSite
+                                                    ?.message
+                                            }
+                                            helperText={errors.geographyIsolationSite?.message}
                                         />
-                                        {errors.geographyIsolationSite && (
-                                            <FormHelperText error>
-                                                {errors.geographyIsolationSite.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -560,12 +556,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             size="small"
                                             margin="none"
                                             variant="outlined"
+                                            error={
+                                                !!errors.geographyCoordinates
+                                                    ?.message
+                                            }
+                                            helperText={errors.geographyCoordinates?.message}
                                         />
-                                        {errors.geographyCoordinates && (
-                                            <FormHelperText error>
-                                                {errors.geographyCoordinates.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -597,12 +593,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             size="small"
                                             margin="none"
                                             variant="outlined"
+                                            error={
+                                                !!errors.geographyIsolationSource
+                                                    ?.message
+                                            }
+                                            helperText={errors.geographyIsolationSource?.message}
                                         />
-                                        {errors.geographyIsolationSource && (
-                                            <FormHelperText error>
-                                                {errors.geographyIsolationSource.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -628,12 +624,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             variant="outlined"
                                             type="number"
                                             InputProps={{ inputProps: { step: step}}}
+                                            error={
+                                                !!errors.geographyAltitude
+                                                    ?.message
+                                            }
+                                            helperText={errors.geographyAltitude?.message}
                                         />
-                                        {errors.geographyAltitude && (
-                                            <FormHelperText error>
-                                                {errors.geographyAltitude.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -663,12 +659,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             variant="outlined"
                                             multiline
                                             minRows={5}
+                                            error={
+                                                !!errors.geographyComments
+                                                    ?.message
+                                            }
+                                            helperText={errors.geographyComments?.message}
                                         />
-                                        {errors.geographyComments && (
-                                            <FormHelperText error>
-                                                {errors.geographyComments.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -716,12 +712,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             size="small"
                                             margin="none"
                                             variant="outlined"
+                                            error={
+                                                !!errors.isolationMedium
+                                                    ?.message
+                                            }
+                                            helperText={errors.isolationMedium?.message}
                                         />
-                                        {errors.isolationMedium && (
-                                            <FormHelperText error>
-                                                {errors.isolationMedium.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -751,12 +747,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             variant="outlined"
                                             type="number"
                                             InputProps={{ inputProps: { step: step}}}
+                                            error={
+                                                !!errors.isolationTemperature
+                                                    ?.message
+                                            }
+                                            helperText={errors.isolationTemperature?.message}
                                         />
-                                        {errors.isolationTemperature && (
-                                            <FormHelperText error>
-                                                {errors.isolationTemperature.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -788,12 +784,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             size="small"
                                             margin="none"
                                             variant="outlined"
+                                            error={
+                                                !!errors.isolationMethod
+                                                    ?.message
+                                            }
+                                            helperText={errors.isolationMethod?.message}
                                         />
-                                        {errors.isolationMethod && (
-                                            <FormHelperText error>
-                                                {errors.isolationMethod.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -825,12 +821,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             size="small"
                                             margin="none"
                                             variant="outlined"
+                                            error={
+                                                !!errors.isolationResponsible
+                                                    ?.message
+                                            }
+                                            helperText={errors.isolationResponsible?.message}
                                         />
-                                        {errors.isolationResponsible && (
-                                            <FormHelperText error>
-                                                {errors.isolationResponsible.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -858,12 +854,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             size="small"
                                             margin="none"
                                             variant="outlined"
+                                            error={
+                                                !!errors.isolationThesisPaper
+                                                    ?.message
+                                            }
+                                            helperText={errors.isolationThesisPaper?.message}
                                         />
-                                        {errors.isolationThesisPaper && (
-                                            <FormHelperText error>
-                                                {errors.isolationThesisPaper.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -892,12 +888,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             margin="none"
                                             variant="outlined"
                                             type="url"
+                                            error={
+                                                !!errors.isolationThesisPaperLink
+                                                    ?.message
+                                            }
+                                            helperText={errors.isolationThesisPaperLink?.message}
                                         />
-                                        {errors.isolationThesisPaperLink && (
-                                            <FormHelperText error>
-                                                {errors.isolationThesisPaperLink.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -927,12 +923,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             variant="outlined"
                                             multiline
                                             minRows={5}
+                                            error={
+                                                !!errors.isolationComments
+                                                    ?.message
+                                            }
+                                            helperText={errors.isolationComments?.message}
                                         />
-                                        {errors.isolationComments && (
-                                            <FormHelperText error>
-                                                {errors.isolationComments.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -996,18 +992,15 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                                             variant="outlined"
                                                             error={
                                                                 !!errors.arnr16sCompleteness
+                                                                    ?.message
                                                             }
+                                                            helperText={errors.arnr16sCompleteness?.message}
                                                             required
                                                         />
                                                     )}
                                                 />
                                             )}
                                         />
-                                        {errors.arnr16sCompleteness && (
-                                            <FormHelperText error>
-                                                {errors.arnr16sCompleteness.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -1037,12 +1030,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             variant="outlined"
                                             type="number"
                                             InputProps={{ inputProps: { step: step}}}
+                                            error={
+                                                !!errors.arnr16sSize
+                                                    ?.message
+                                            }
+                                            helperText={errors.arnr16sSize?.message}
                                         />
-                                        {errors.arnr16sSize && (
-                                            <FormHelperText error>
-                                                {errors.arnr16sSize.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -1075,12 +1068,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             margin="none"
                                             variant="outlined"
                                             type="url"
+                                            error={
+                                                !!errors.arnr16sSequenceFile
+                                                    ?.message
+                                            }
+                                            helperText={errors.arnr16sSequenceFile?.message}
                                         />
-                                        {errors.arnr16sSequenceFile && (
-                                            <FormHelperText error>
-                                                {errors.arnr16sSequenceFile.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -1109,12 +1102,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             margin="none"
                                             variant="outlined"
                                             type="url"
+                                            error={
+                                                !!errors.arnr16sMacrogenFile
+                                                    ?.message
+                                            }
+                                            helperText={errors.arnr16sMacrogenFile?.message}
                                         />
-                                        {errors.arnr16sMacrogenFile && (
-                                            <FormHelperText error>
-                                                {errors.arnr16sMacrogenFile.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -1144,12 +1137,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             variant="outlined"
                                             multiline
                                             minRows={5}
+                                            error={
+                                                !!errors.arnr16sComments
+                                                    ?.message
+                                            }
+                                            helperText={errors.arnr16sComments?.message}
                                         />
-                                        {errors.arnr16sComments && (
-                                            <FormHelperText error>
-                                                {errors.arnr16sComments.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -1231,7 +1224,11 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                                                     id="characterizationGrowingMedia"
                                                                     margin="normal"
                                                                     variant="outlined"
-                                                                    error={!!errors.characterizationGrowingMedia?.message}
+                                                                    error={
+                                                                        !!errors.characterizationGrowingMedia
+                                                                            ?.message
+                                                                    }
+                                                                    helperText={errors.characterizationGrowingMedia?.message}
                                                                 />
                                                             );
                                                         }}
@@ -1239,11 +1236,6 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                                 );
                                             }}
                                         />
-                                        {errors.characterizationGrowingMedia && (
-                                            <FormHelperText error>
-                                                {errors.characterizationGrowingMedia.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -1307,7 +1299,11 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                                                     id="characterizationNotGrowingMedia"
                                                                     margin="normal"
                                                                     variant="outlined"
-                                                                    error={!!errors.characterizationNotGrowingMedia?.message}
+                                                                    error={
+                                                                        !!errors.characterizationNotGrowingMedia
+                                                                            ?.message
+                                                                    }
+                                                                    helperText={errors.characterizationNotGrowingMedia?.message}
                                                                 />
                                                             );
                                                         }}
@@ -1315,11 +1311,6 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                                 );
                                             }}
                                         />
-                                        {errors.characterizationNotGrowingMedia && (
-                                            <FormHelperText error>
-                                                {errors.characterizationNotGrowingMedia.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -1367,18 +1358,15 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                                             variant="outlined"
                                                             error={
                                                                 !!errors.characterizationMycelial
+                                                                    ?.message
                                                             }
+                                                            helperText={errors.characterizationMycelial?.message}
                                                             required
                                                         />
                                                     )}
                                                 />
                                             )}
                                         />
-                                        {errors.characterizationMycelial && (
-                                            <FormHelperText error>
-                                                {errors.characterizationMycelial.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -1407,12 +1395,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             margin="none"
                                             variant="outlined"
                                             type="number"
+                                            error={
+                                                !!errors.characterizationColoniesDay
+                                                    ?.message
+                                            }
+                                            helperText={errors.characterizationColoniesDay?.message}
                                         />
-                                        {errors.characterizationColoniesDay && (
-                                            <FormHelperText error>
-                                                {errors.characterizationColoniesDay.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -1441,12 +1429,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             margin="none"
                                             variant="outlined"
                                             type="number"
+                                            error={
+                                                !!errors.characterizationSporulationDay
+                                                    ?.message
+                                            }
+                                            helperText={errors.characterizationSporulationDay?.message}
                                         />
-                                        {errors.characterizationSporulationDay && (
-                                            <FormHelperText error>
-                                                {errors.characterizationSporulationDay.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -1475,12 +1463,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             margin="none"
                                             variant="outlined"
                                             type="number"
+                                            error={
+                                                !!errors.characterizationBiomassDay
+                                                    ?.message
+                                            }
+                                            helperText={errors.characterizationBiomassDay?.message}
                                         />
-                                        {errors.characterizationBiomassDay && (
-                                            <FormHelperText error>
-                                                {errors.characterizationBiomassDay.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -1529,17 +1517,14 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                                             variant="outlined"
                                                             error={
                                                                 !!errors.characterizationShape
+                                                                    ?.message
                                                             }
+                                                            helperText={errors.characterizationShape?.message}
                                                         />
                                                     )}
                                                 />
                                             )}
                                         />
-                                        {errors.characterizationShape && (
-                                            <FormHelperText error>
-                                                {errors.characterizationShape.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -1589,17 +1574,14 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                                             variant="outlined"
                                                             error={
                                                                 !!errors.characterizationBorder
+                                                                    ?.message
                                                             }
+                                                            helperText={errors.characterizationBorder?.message}
                                                         />
                                                     )}
                                                 />
                                             )}
                                         />
-                                        {errors.characterizationBorder && (
-                                            <FormHelperText error>
-                                                {errors.characterizationBorder.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -1646,17 +1628,14 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                                             variant="outlined"
                                                             error={
                                                                 !!errors.characterizationElevation
+                                                                    ?.message
                                                             }
+                                                            helperText={errors.characterizationElevation?.message}
                                                         />
                                                     )}
                                                 />
                                             )}
                                         />
-                                        {errors.characterizationElevation && (
-                                            <FormHelperText error>
-                                                {errors.characterizationElevation.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -1702,17 +1681,14 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                                             variant="outlined"
                                                             error={
                                                                 !!errors.characterizationSurface
+                                                                    ?.message
                                                             }
+                                                            helperText={errors.characterizationSurface?.message}
                                                         />
                                                     )}
                                                 />
                                             )}
                                         />
-                                        {errors.characterizationSurface && (
-                                            <FormHelperText error>
-                                                {errors.characterizationSurface.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -1739,12 +1715,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             size="small"
                                             margin="none"
                                             variant="outlined"
+                                            error={
+                                                !!errors.characterizationColor
+                                                    ?.message
+                                            }
+                                            helperText={errors.characterizationColor?.message}
                                         />
-                                        {errors.characterizationColor && (
-                                            <FormHelperText error>
-                                                {errors.characterizationColor.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -1790,17 +1766,14 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                                             variant="outlined"
                                                             error={
                                                                 !!errors.characterizationTransparency
+                                                                    ?.message
                                                             }
+                                                            helperText={errors.characterizationTransparency?.message}
                                                         />
                                                     )}
                                                 />
                                             )}
                                         />
-                                        {errors.characterizationTransparency && (
-                                            <FormHelperText error>
-                                                {errors.characterizationTransparency.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -1846,17 +1819,14 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                                             variant="outlined"
                                                             error={
                                                                 !!errors.characterizationBrightness
+                                                                    ?.message
                                                             }
+                                                            helperText={errors.characterizationBrightness?.message}
                                                         />
                                                     )}
                                                 />
                                             )}
                                         />
-                                        {errors.characterizationBrightness && (
-                                            <FormHelperText error>
-                                                {errors.characterizationBrightness.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -1886,12 +1856,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             variant="outlined"
                                             multiline
                                             minRows={5}
+                                            error={
+                                                !!errors.characterizationComments
+                                                    ?.message
+                                            }
+                                            helperText={errors.characterizationComments?.message}
                                         />
-                                        {errors.characterizationComments && (
-                                            <FormHelperText error>
-                                                {errors.characterizationComments.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -1936,12 +1906,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             margin="none"
                                             variant="outlined"
                                             type="url"
+                                            error={
+                                                !!errors.genomeRawData
+                                                    ?.message
+                                            }
+                                            helperText={errors.genomeRawData?.message}
                                         />
-                                        {errors.genomeRawData && (
-                                            <FormHelperText error>
-                                                {errors.genomeRawData.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -1971,12 +1941,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             variant="outlined"
                                             multiline
                                             minRows={5}
+                                            error={
+                                                !!errors.genomeComments
+                                                    ?.message
+                                            }
+                                            helperText={errors.genomeComments?.message}
                                         />
-                                        {errors.genomeComments && (
-                                            <FormHelperText error>
-                                                {errors.genomeComments.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -2021,12 +1991,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             margin="none"
                                             variant="outlined"
                                             type="url"
+                                            error={
+                                                !!errors.bioactivityFile
+                                                    ?.message
+                                            }
+                                            helperText={errors.bioactivityFile?.message}
                                         />
-                                        {errors.bioactivityFile && (
-                                            <FormHelperText error>
-                                                {errors.bioactivityFile.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -2090,7 +2060,11 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                                                     id="bioactivityYes"
                                                                     margin="normal"
                                                                     variant="outlined"
-                                                                    error={!!errors.bioactivityYes?.message}
+                                                                    error={
+                                                                        !!errors.bioactivityYes
+                                                                            ?.message
+                                                                    }
+                                                                    helperText={errors.bioactivityYes?.message}
                                                                 />
                                                             );
                                                         }}
@@ -2098,11 +2072,6 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                                 );
                                             }}
                                         />
-                                        {errors.bioactivityYes && (
-                                            <FormHelperText error>
-                                                {errors.bioactivityYes.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -2166,7 +2135,11 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                                                     id="bioactivityNo"
                                                                     margin="normal"
                                                                     variant="outlined"
-                                                                    error={!!errors.bioactivityNo?.message}
+                                                                    error={
+                                                                        !!errors.bioactivityNo
+                                                                            ?.message
+                                                                    }
+                                                                    helperText={errors.bioactivityNo?.message}
                                                                 />
                                                             );
                                                         }}
@@ -2174,11 +2147,6 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                                 );
                                             }}
                                         />
-                                        {errors.bioactivityNo && (
-                                            <FormHelperText error>
-                                                {errors.bioactivityNo.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -2242,7 +2210,11 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                                                     id="bioactivityNa"
                                                                     margin="normal"
                                                                     variant="outlined"
-                                                                    error={!!errors.bioactivityNa?.message}
+                                                                    error={
+                                                                        !!errors.bioactivityNa
+                                                                            ?.message
+                                                                    }
+                                                                    helperText={errors.bioactivityNa?.message}
                                                                 />
                                                             );
                                                         }}
@@ -2250,11 +2222,6 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                                 );
                                             }}
                                         />
-                                        {errors.bioactivityNa && (
-                                            <FormHelperText error>
-                                                {errors.bioactivityNa.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -2284,12 +2251,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             variant="outlined"
                                             multiline
                                             minRows={5}
+                                            error={
+                                                !!errors.bioactivityComments
+                                                    ?.message
+                                            }
+                                            helperText={errors.bioactivityComments?.message}
                                         />
-                                        {errors.bioactivityComments && (
-                                            <FormHelperText error>
-                                                {errors.bioactivityComments.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -2334,12 +2301,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             margin="none"
                                             variant="outlined"
                                             type="url"
+                                            error={
+                                                !!errors.metabolomicsMedinaFoundationReports
+                                                    ?.message
+                                            }
+                                            helperText={errors.metabolomicsMedinaFoundationReports?.message}
                                         />
-                                        {errors.metabolomicsMedinaFoundationReports && (
-                                            <FormHelperText error>
-                                                {errors.metabolomicsMedinaFoundationReports.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -2368,12 +2335,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             margin="none"
                                             variant="outlined"
                                             type="url"
+                                            error={
+                                                !!errors.metabolomicsRawData
+                                                    ?.message
+                                            }
+                                            helperText={errors.metabolomicsRawData?.message}
                                         />
-                                        {errors.metabolomicsRawData && (
-                                            <FormHelperText error>
-                                                {errors.metabolomicsRawData.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -2403,12 +2370,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             variant="outlined"
                                             multiline
                                             minRows={5}
+                                            error={
+                                                !!errors.metabolomicsComments
+                                                    ?.message
+                                            }
+                                            helperText={errors.metabolomicsComments?.message}
                                         />
-                                        {errors.metabolomicsComments && (
-                                            <FormHelperText error>
-                                                {errors.metabolomicsComments.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -2488,7 +2455,11 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                                                     id="enzymesYes"
                                                                     margin="normal"
                                                                     variant="outlined"
-                                                                    error={!!errors.enzymesYes?.message}
+                                                                    error={
+                                                                        !!errors.enzymesYes
+                                                                            ?.message
+                                                                    }
+                                                                    helperText={errors.enzymesYes?.message}
                                                                 />
                                                             );
                                                         }}
@@ -2496,11 +2467,6 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                                 );
                                             }}
                                         />
-                                        {errors.enzymesYes && (
-                                            <FormHelperText error>
-                                                {errors.enzymesYes.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -2564,7 +2530,11 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                                                     id="enzymesNo"
                                                                     margin="normal"
                                                                     variant="outlined"
-                                                                    error={!!errors.enzymesNo?.message}
+                                                                    error={
+                                                                        !!errors.enzymesNo
+                                                                            ?.message
+                                                                    }
+                                                                    helperText={errors.enzymesNo?.message}
                                                                 />
                                                             );
                                                         }}
@@ -2572,11 +2542,6 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                                 );
                                             }}
                                         />
-                                        {errors.enzymesNo && (
-                                            <FormHelperText error>
-                                                {errors.enzymesNo.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -2640,7 +2605,11 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                                                     id="enzymesNa"
                                                                     margin="normal"
                                                                     variant="outlined"
-                                                                    error={!!errors.enzymesNa?.message}
+                                                                    error={
+                                                                        !!errors.enzymesNa
+                                                                            ?.message
+                                                                    }
+                                                                    helperText={errors.enzymesNa?.message}
                                                                 />
                                                             );
                                                         }}
@@ -2648,11 +2617,6 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                                 );
                                             }}
                                         />
-                                        {errors.enzymesNa && (
-                                            <FormHelperText error>
-                                                {errors.enzymesNa.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
@@ -2682,12 +2646,12 @@ export const ActinobacteriaEdit: React.FC<IResourceComponentsProps> = () => {
                                             variant="outlined"
                                             multiline
                                             minRows={5}
+                                            error={
+                                                !!errors.enzymesComments
+                                                    ?.message
+                                            }
+                                            helperText={errors.enzymesComments?.message}
                                         />
-                                        {errors.enzymesComments && (
-                                            <FormHelperText error>
-                                                {errors.enzymesComments.message}
-                                            </FormHelperText>
-                                        )}
                                     </FormControl>
                                 </Stack>
                             </Grid>
