@@ -79,7 +79,10 @@ export const ActinobacteriaList: React.FC<IResourceComponentsProps> = () => {
                 flex: 1,
                 filterOperators: getGridStringOperators().filter(
                     (operator) => operator.value === 'contains'
-                )
+                ),
+                renderCell: function render({ row }) {
+                    return <em>{row?.identifierSpecies}</em>
+                }
             },
             {
                 field: "arnr16sCompleteness",
