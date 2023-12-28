@@ -49,5 +49,5 @@ Raúl Ignacio Cruz Torres.
 
 Contact info:
 - [GitHub](https://github.com/RaulCruzT)
-- [Email](cruztorresraul@gmail.com)
+- [Email](mailto:cruztorresraul@gmail.com)
 - [LinkedIn](https://www.linkedin.com/in/raulcruztorres/)
